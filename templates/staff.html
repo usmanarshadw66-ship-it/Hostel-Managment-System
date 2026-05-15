@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>Staff Information</h1>
+
+    <form method="POST">
+
+        <input type="text" name="name" placeholder="Staff Name" required>
+
+        <input type="number" name="age" placeholder="Staff Age" required>
+
+        <input type="text" name="staff_id" placeholder="Staff ID" required>
+
+        <input type="text" name="position" placeholder="Staff Position" required>
+
+        <input type="number" name="salary" placeholder="Salary" required>
+
+        <button>Add Staff</button>
+
+    </form>
+
+
+    <table>
+
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>ID</th>
+            <th>Position</th>
+            <th>Salary</th>
+        </tr>
+
+        {% for staff in staffs %}
+
+        <tr>
+            <td>{{ staff.name }}</td>
+            <td>{{ staff.age }}</td>
+            <td>{{ staff.staff_id }}</td>
+            <td>{{ staff.position }}</td>
+            <td>{{ staff.salary }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>
 

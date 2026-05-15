@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>Room Information</h1>
+
+    <form method="POST">
+
+        <input type="number" name="room_number" placeholder="Room Number" required>
+
+        <input type="number" name="room_fee" placeholder="Room Fee" required>
+
+        <input type="number" name="units" placeholder="Electricity Units" required>
+
+        <button>Calculate Rent</button>
+
+    </form>
+
+
+    <table>
+
+        <tr>
+            <th>Room</th>
+            <th>Room Fee</th>
+            <th>Electricity</th>
+            <th>Total</th>
+        </tr>
+
+        {% for room in rooms %}
+
+        <tr>
+            <td>{{ room.room_number }}</td>
+            <td>{{ room.room_fee }}</td>
+            <td>{{ room.electricity }}</td>
+            <td>{{ room.total }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>
 

@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup - Usman Hostel</title>
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-box">
+
+        <h1>Create Account</h1>
+        <p>Sign up to access Usman Hostel System</p>
+
+        <!-- Flash Message (optional) -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="message">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- SIGNUP FORM -->
+        <form action="/create_account" method="POST">
+
+            <input type="text"
+                   name="name"
+                   placeholder="Full Name"
+                   required>
+
+            <input type="email"
+                   name="email"
+                   placeholder="Email Address"
+                   required>
+
+            <input type="password"
+                   name="password"
+                   placeholder="Password"
+                   required>
+
+            <button type="submit">Sign Up</button>
+
+        </form>
+
+        <a href="/">Already have an account? Login</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
